@@ -2,18 +2,18 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    json_response(@users)
+    render json: @users
   end
 
   # POST /users
   def create
     @user = User.create!(user_params)
-    json_response(@user, :created)
+    render json: @users
   end
 
   # GET /users/:id
   def show
-    json_response(@user)
+    render json: @users
   end
 
   # PUT /users/:id
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   private
 
-  def todo_params
+  def user_params
     # whitelist params
     params.permit(:title, :created_by)
   end
