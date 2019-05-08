@@ -13,13 +13,15 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    render json: @users
+    @user = User.find_by(id: params[:id])
+    render json: @user
   end
 
   # PUT /users/:id
   def update
+    @user = User.find_by(id: params[:id])
     @user.update(user_params)
-    head :no_content
+    render json: @user
   end
 
   # DELETE /users/:id
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
 
   def user_params
     # whitelist params
-    params.permit(:title, :created_by)
+    params.permit(:balance)
   end
 
 end
