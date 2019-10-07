@@ -8,4 +8,4 @@
 
 require 'time'
 
-user1 = User.create(username: "will", first_name: "Will", last_name: "Saffran", balance: 1000)
+user1 = User.create(username: "nathaniel2897", first_name: "Nathaniel", last_name: "Cain", balance: 1000)
